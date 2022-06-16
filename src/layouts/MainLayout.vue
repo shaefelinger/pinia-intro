@@ -3,7 +3,7 @@
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title>
-          Quasar App
+          counterStore: {{counterStore.counter}}
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -18,8 +18,13 @@
 </template>
 
 <script>
+import {useCounterStore} from "stores/CounterStore";
 
 export default {
-
+setup() {
+  return {
+    counterStore: useCounterStore()
+  }
+}
 }
 </script>
