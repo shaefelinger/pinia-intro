@@ -2,7 +2,7 @@
 
 ## Was ist Pinia?
 
-Neues State-Management - offizieller Nachfolger von VUEX
+Neue State-Management-Library - offizieller Nachfolger von VUEX
 
 [https://pinia.vuejs.org/](https://pinia.vuejs.org/)
 
@@ -58,9 +58,9 @@ z.B `/stores/CounterStore.js`
 import { defineStore } from "pinia";
 
 export const useCounterStore = defineStore('CounterStore', {
-  // state
-  // getters
-  // actions
+    // state
+    // getters
+    // actions
 })
 ```
 
@@ -74,10 +74,10 @@ export const useCounterStore = defineStore('CounterStore', {
 
 ```js
 state() {
-  return {
-    counter: 1,
-  };
-},
+    return {
+      counter: 1,
+    };
+  },
 ```
 
 > Funktion, returns Object (wie z.B. data in Options-Api)
@@ -86,11 +86,11 @@ state() {
 
 ```vue
 <template>
-  <h6>{{counterStore.counter}}</h6>
+	<h6>{{counterStore.counter}}</h6>
 </template>
 
 <script>
-import {useCounterStore} from 'src/stores/CounterStore.js'
+import {useCounterStore} from 'stores/CounterStore.js'
 
 export default {
   setup() {
@@ -98,7 +98,6 @@ export default {
       counterStore: useCounterStore();
     }
   }
-// ... data, methods, computed, etc.
 }
 </script>
 ```
@@ -120,10 +119,10 @@ export default {
 
 ```js
 getters: {
-  doubleCounter() {
-    return this.counter * 2;
-  }
-},
+    doubleCounter() {
+      return this.counter * 2;
+    }
+ },
 ```
 
 > wie computed-property: gibt einen berechneten Wert zurück
@@ -196,11 +195,11 @@ Im Store:
 ```js
 import {useLocalStorage} from '@vueuse/core';
 ...
-state() {
-  return {
-    counter: useLocalStorage("counter", 1),
-  };
-},
+  state() {
+    return {
+      counter: useLocalStorage("myCounter", 1),
+    };
+  },
 ```
 
 ------
@@ -217,8 +216,7 @@ import { defineStire, acceptHMRUpdate } from 'pinia'
 
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(<StoreName>, import.meta.hot))
-    }
+}
 ```
 
-[hot-module-replacement](https://pinia.vuejs.org/cookbook/hot-module-replacement.html)
-
+https://pinia.vuejs.org/cookbook/hot-module-replacement.html
