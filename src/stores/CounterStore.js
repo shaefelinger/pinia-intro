@@ -15,6 +15,11 @@ export const useCounterStore = defineStore('CounterStore', {
     textCounter() {
       return `Der Counter steht bei ${this.counter} !!!`
     }
-  }
+  },
   // actions
+  actions: {
+    addTen() {
+      this.counter += 10
+    }
+  }
 })
