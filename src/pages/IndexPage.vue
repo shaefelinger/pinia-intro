@@ -11,16 +11,20 @@
       <p>Double Counter: {{counterStore.doubleCounter}}</p>
       <p>Text Counter: {{counterStore.textCounter}}</p>
     </div>
+
+    <pre>{{ todoStore.todos}}</pre>
   </q-page>
 </template>
 
 <script>
 import {useCounterStore} from "stores/CounterStore";
+import {useTodoStore} from "stores/TodoStore";
 
 export default {
   setup() {
     return {
-      counterStore: useCounterStore()
+      counterStore: useCounterStore(),
+      todoStore: useTodoStore()
     }
   },
   // computed: {
