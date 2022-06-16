@@ -11,6 +11,10 @@
       <p>Double Counter: {{counterStore.doubleCounter}}</p>
       <p>Text Counter: {{counterStore.textCounter}}</p>
     </div>
+    <div class="row q-gutter-sm q-mt-sm">
+      <q-btn @click="todoStore.fetchData">Fetch data</q-btn>
+      <q-btn @click="todoStore.$reset()">Reset</q-btn>
+    </div>
 
     <pre>{{ todoStore.todos}}</pre>
   </q-page>
