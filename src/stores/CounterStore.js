@@ -1,10 +1,11 @@
 import {defineStore} from 'pinia'
+import {useLocalStorage} from "@vueuse/core";
 
 export const useCounterStore = defineStore('CounterStore', {
   // state
   state() {
     return {
-      counter: 1
+      counter: useLocalStorage('myCounter', 1)
     }
   },
   // getters
