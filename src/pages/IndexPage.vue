@@ -7,7 +7,8 @@
     </div>
     <div class="row q-gutter-sm q-mt-sm">
       <p>Counter: {{counterStore.counter}}</p>
-      <p>Double Counter: {{doubleCounter}}</p>
+      <p>Double Counter: {{counterStore.doubleCounter}}</p>
+      <p>Text Counter: {{counterStore.textCounter}}</p>
     </div>
   </q-page>
 </template>
@@ -21,11 +22,11 @@ export default {
       counterStore: useCounterStore()
     }
   },
-  computed: {
-    doubleCounter() {
-      return this.counterStore.counter * 2
-    }
-  }
+  // computed: {
+  //   doubleCounter() {
+  //     return this.counterStore.counter * 2
+  //   }
+  // }
   // data, methods, computed, etc.
 }
 </script>

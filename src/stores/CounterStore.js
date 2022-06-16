@@ -6,7 +6,15 @@ export const useCounterStore = defineStore('CounterStore', {
     return {
       counter: 1
     }
-  }
+  },
   // getters
+  getters: {
+    doubleCounter() {
+      return this.counter*2
+    },
+    textCounter() {
+      return `Der Counter steht bei ${this.counter} !!!`
+    }
+  }
   // actions
 })
